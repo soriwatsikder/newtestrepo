@@ -34,7 +34,7 @@ public class Homepage extends BaseClass {
 	        System.out.println("Oh!!! Exception caught to find Login button --- " +e.getMessage());
 	    } */
 		
-		WebElement element = driver.findElement(By.xpath("//input[@name='commit']"));
+		WebElement element = lpg.getLogin();
 		Actions actions = new Actions(driver);
 		actions.moveToElement(element).click().build().perform();
 		
