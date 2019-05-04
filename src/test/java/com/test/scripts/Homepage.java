@@ -2,8 +2,8 @@ package com.test.scripts;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -27,14 +27,17 @@ public class Homepage extends BaseClass {
 		//System.out.println(Text);
 		
 		
-		WebDriverWait wait = new WebDriverWait(driver, 50);
+	/*	WebDriverWait wait = new WebDriverWait(driver, 50);
 	    try {
 	       wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@name='commit']")));
 	    } catch (Exception e) {
 	        System.out.println("Oh!!! Exception caught to find Login button --- " +e.getMessage());
-	    }
+	    } */
 		
-		driver.findElement(By.xpath("//input[@name='commit']")).click();
+		WebElement element = driver.findElement(By.xpath("//input[@name='commit']"));
+		Actions actions = new Actions(driver);
+		actions.moveToElement(element).click().build().perform();
+		
 		//lpg.getLogin().click();
 	}
 	@DataProvider
