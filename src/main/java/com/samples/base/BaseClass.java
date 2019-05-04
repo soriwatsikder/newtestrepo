@@ -22,7 +22,7 @@ public class BaseClass {
 		String browserName = prop.getProperty("browser");
 		
 		if(browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver");
+			System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/mac/chromedriver");
 			 driver = new ChromeDriver();
 		}
 		else if(browserName.equals("firefox")) {
