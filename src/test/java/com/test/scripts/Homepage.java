@@ -2,6 +2,7 @@ package com.test.scripts;
 import org.testng.annotations.Test;
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -23,7 +24,8 @@ public class Homepage extends BaseClass {
 		lpg.getEmail().sendKeys(Username);
 		lpg.getPass().sendKeys(Password);
 		//System.out.println(Text);
-		lpg.getLogin().click();
+		driver.findElement(By.xpath("//input[@name='commit']")).click();
+		//lpg.getLogin().click();
 	}
 	@DataProvider
 	public Object[][] getData() {
